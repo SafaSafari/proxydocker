@@ -15,7 +15,7 @@ class Proxydocker:
             return 'CN25'
         if '6' in type:
             return 'CN80'
-        return 'UNKWOWN'
+        return 'UNKNOWN'
     
     def anonymity(self, anonymity):
         if '1' in anonymity:
@@ -24,7 +24,7 @@ class Proxydocker:
             return 'ANONYMOUS'
         if '3' in anonymity:
             return 'ELITE'
-        return 'UNKWOWN'
+        return 'UNKNOWN'
 
     def __init__(self, config: config = config):
         self.config = config
