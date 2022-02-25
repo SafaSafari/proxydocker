@@ -1,4 +1,4 @@
-import requests, re
+import requests, re, json
 from type import *
 
 class Proxydocker:
