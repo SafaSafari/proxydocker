@@ -39,7 +39,10 @@ class Proxydocker:
             result = []
             for proxy in response['proxies']:
                 result.append({'proxy': proxy['ip'] + ':' + str(proxy['port']), 'type': self.type(proxy['type']), 'isGoogle': proxy['isGoogle'], 'country': proxy['country'], 'country_code': proxy['code'], 'city': proxy['city'], 'timeout': proxy['timeout'], 'anonymity': self.anonymity(proxy['anonymity'])})
-            return result
+            return json.dumps(result, indent=4)
 
 if __name__ == '__main__':
-    print(Proxydocker().run())
+    config = config()
+    config.type = Type.SOCKS5
+    config.country = "United States"
+    print(Proxydocker(config).run())
